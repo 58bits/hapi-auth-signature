@@ -1,8 +1,8 @@
 ### hapi-auth-signature
 
-Signature authentication scheme that wraps the [Joyent Signature Authentication Scheme](https://github.com/joyent/node-http-signature) and requires validating signed authorization header.
+Signature authentication scheme that wraps the [Joyent Signature Authentication Scheme](https://github.com/joyent/node-http-signature) and requires a validating signed authorization header.
 
-- `validateFunc` - (required) an api key id and secret key lookup validation function with the signature `function(keyId, callback)` where:
+- `validateFunc` - (required) an api key id and secret key lookup validation function with the signature `function(parsedHeader, callback)` where:
     - `parsedHeader` - [http-signature](https://github.com/joyent/node-http-signature) parsed header including the key id and signature.
     - `callback` - a callback function with the signature `function(err, isValid, credentials)` where:
         - `err` - an internal error.
@@ -11,7 +11,7 @@ Signature authentication scheme that wraps the [Joyent Signature Authentication 
           included when `isValid` is `true`, but there are cases when the application needs to know who tried to authenticate even when it fails
           (e.g. with authentication mode `'try'`).
 
-The validation function shown below is based on an hmac scheme with a key identifier and secret key stored in a user record. [http-signature](https://github.com/joyent/node-http-signature) supports the following algorithms:
+The validation function shown below is based on an hmac strategy with a key identifier and secret key stored in a user record. [http-signature](https://github.com/joyent/node-http-signature) supports the following algorithms:
 
 * rsa-sha1
 * rsa-sha256
@@ -21,6 +21,7 @@ The validation function shown below is based on an hmac scheme with a key identi
 * hmac-sha256
 * hmac-sha512
 
+Public key algorithms will almost certainly require their own validating function (and therefore strategy). The algorithm used can be retrieved from the header as its part of the http-signature scheme. See the docs at  [http-signature](https://github.com/joyent/node-http-signature) for more details.
 
 ```javascript
 
