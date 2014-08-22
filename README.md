@@ -2,7 +2,7 @@
 
 Signature authentication scheme that wraps the [Joyent Signature Authentication Scheme](https://github.com/joyent/node-http-signature) and requires a validating signed authorization header.
 
-- `validateFunc` - (required) an api key id and secret key lookup validation function with the signature `function(parsedHeader, callback)` where:
+- `validateFunc` - (required) validation function with the signature `function(parsedHeader, callback)` where:
     - `parsedHeader` - [http-signature](https://github.com/joyent/node-http-signature) parsed header including the key id and signature.
     - `callback` - a callback function with the signature `function(err, isValid, credentials)` where:
         - `err` - an internal error.
