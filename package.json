@@ -26,9 +26,6 @@
     "hapi": "6.x.x",
     "lab": "3.x.x"
   },
-  "scripts": {
-    "test": "make test-cov"
-  },
   "licenses": [
     {
       "type": "BSD",
