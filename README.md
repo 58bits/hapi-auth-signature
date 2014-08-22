@@ -25,7 +25,7 @@ The validation function shown below is based on an hmac strategy with a key iden
 * hmac-sha256
 * hmac-sha512
 
-Public key algorithms will almost certainly require their own validating function (and therefore strategy). The algorithm used can be retrieved from the header as its part of the http-signature scheme. See the docs at  [http-signature](https://github.com/joyent/node-http-signature) for more details.
+Public key algorithms will almost certainly require their own validating function (and therefore strategy). The algorithm used can be retrieved from the header as it's part of the http-signature scheme. See the docs at  [http-signature](https://github.com/joyent/node-http-signature) for more details.
 
 ```javascript
 
