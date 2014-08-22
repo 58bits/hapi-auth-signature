@@ -56,7 +56,7 @@ var validate = function (parsedHeader, callback) {
         return callback(null, false);
     }
 
-    if(HttpSignature.verifySignature(parsedHeader, user.secretkey)) {
+    if(HttpSignature.verifySignature(parsedHeader, secretKey)) {
         callback(null, true, credentials);
     } else {
         callback(null, false);
