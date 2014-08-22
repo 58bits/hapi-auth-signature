@@ -29,7 +29,7 @@ var HttpSignature = require('http-signature');
 
 var users = [
     {
-        id: '1,
+        id: 1,
         username: 'john',
         apikeyid: '18KF2FGK6807ZQA945R2',
         secretkey: '46573e78ce9df4f2d9ae93afd5f5c281'
