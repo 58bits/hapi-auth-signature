@@ -7,7 +7,8 @@ This is a signature authentication scheme for [hapi](http://hapijs.com/) that wr
 The hapi-auth-signature scheme takes the following options.
 
 - `validateFunc` - (required) validation function with the signature `function(parsedHeader, callback)` where:
-    - `parsedHeader` - [http-signature](https://github.com/joyent/node-http-signature) parsed header.
+    - `request` - hapi request object.
+    - `parsedSignature` - [http-signature](https://github.com/joyent/node-http-signature) parsed signature from header.
     - `callback` - a callback function with the signature `function(err, isValid, credentials)` where:
         - `err` - an internal error.
         - `isValid` - `true` if the signature is verified, otherwise `false`.
@@ -40,9 +41,9 @@ var users = [
     }
 ];
 
-var validate = function (parsedHeader, callback) {
+var validate = function (request, parsedSignature, callback) {
 
-    var keyId = parsedHeader.keyId;
+    var keyId = parsedSignature.keyId;
     var credentials {};
     var secretKey;
     users.forEach(function(user, index) {
@@ -56,7 +57,7 @@ var validate = function (parsedHeader, callback) {
         return callback(null, false);
     }
 
-    if(HttpSignature.verifySignature(parsedHeader, secretKey)) {
+    if(HttpSignature.verifySignature(parsedSignature, secretKey)) {
         callback(null, true, credentials);
     } else {
         callback(null, false);
