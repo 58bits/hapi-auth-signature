@@ -6,7 +6,7 @@ This is a signature authentication scheme for [hapi](http://hapijs.com/) that wr
 
 The hapi-auth-signature scheme takes the following options.
 
-- `validateFunc` - (required) validation function with the signature `function(parsedHeader, callback)` where:
+- `validateFunc` - (required) validation function with the signature `function(request, parsedSignature, callback)` where:
     - `request` - hapi request object.
     - `parsedSignature` - [http-signature](https://github.com/joyent/node-http-signature) parsed signature from header.
     - `callback` - a callback function with the signature `function(err, isValid, credentials)` where:
