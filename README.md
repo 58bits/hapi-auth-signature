@@ -44,14 +44,14 @@ var users = [
 var validate = function (request, parsedSignature, callback) {
 
     var keyId = parsedSignature.keyId;
-    var credentials {};
+    var credentials = {};
     var secretKey;
     users.forEach(function(user, index) {
         if (user.apikeyid === keyId) {
             secretKey = user.secretkey;
             credentials = {id: user.id, username: user.username};
         }
-    }
+    });
 
     if (!secretKey) {
         return callback(null, false);
