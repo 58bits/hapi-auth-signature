@@ -1,5 +1,7 @@
 ### hapi-auth-signature
 
+NOTE: Use v1.0.1 from npm for Hapi version 7.x.x and v2.0.1 for Hapi version 8.x.x
+
 First, a big hat tip to the guys that created the [hapi](http://hapijs.com/) framework.
 
 This is a signature authentication scheme for [hapi](http://hapijs.com/) that wraps the [Joyent Signature Authentication Scheme](https://github.com/joyent/node-http-signature) and requires a validating signed authorization header. (Note: the format of this plugin, including the docs here, follows the [hapi-auth-basic](https://github.com/hapijs/hapi-auth-basic) plugin).
