@@ -59,7 +59,7 @@ var validate = function (request, parsedSignature, callback) {
         return callback(null, false);
     }
 
-    if(HttpSignature.verifySignature(parsedSignature, secretKey)) {
+    if(HttpSignature.verifyHMAC(parsedSignature, secretKey)) {
         callback(null, true, credentials);
     } else {
         callback(null, false);
