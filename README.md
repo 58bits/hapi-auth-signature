@@ -1,6 +1,6 @@
 ### hapi-auth-signature
 
-NOTE: Use v1.0.1 from npm for Hapi version 7.x.x and v2.0.1 for Hapi version 8.x.x
+NOTE: Use v1.0.1 from npm for Hapi version 7.x.x and v2.0.2 for Hapi version 8.x.x
 
 First, a big hat tip to the guys that created the [hapi](http://hapijs.com/) framework.
 
