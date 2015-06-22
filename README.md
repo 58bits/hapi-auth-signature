@@ -18,6 +18,12 @@ The hapi-auth-signature scheme takes the following options.
           included when `isValid` is `true`, but there are cases when the application needs to know who tried to authenticate even when it fails
           (e.g. with authentication mode `'try'`).
 
+- `payloadFunc` - (optional) payload validation function with the signature `function(request, callback)` where:
+    - `request` - hapi request object.
+    - `callback` - a callback function with the signature `function(err, isValid)` where:
+        - `err` - an internal error.
+        - `isValid` - `true` if the payload is verified, otherwise `false`.
+
 The validation function shown below is based on an hmac strategy with a key identifier and secret key stored in a user record. [http-signature](https://github.com/joyent/node-http-signature) supports the following algorithms:
 
 * rsa-sha1
