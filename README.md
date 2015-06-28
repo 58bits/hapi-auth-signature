@@ -2,7 +2,7 @@
 
 NOTE: Use v1.0.1 from npm for Hapi version 7.x.x and v2.x.x for Hapi version 8.x.x
 
-NOTE: In version 0.11.0 of [http-signature](https://github.com/joyent/node-http-signature) the verify method has been split into verifyHMAC and verifySignature. The example below uses an HMAC scheme, and so the verify function is using verifyHMAC. 
+NOTE: In version 0.11.0 of [http-signature](https://github.com/joyent/node-http-signature) the verify method has been split into `verifyHMAC` and `verifySignature`. The example below uses an HMAC scheme, and so the verify function is using `verifyHMAC`. 
 
 First, a big hat tip to the guys that created the [hapi](http://hapijs.com/) framework.
 
