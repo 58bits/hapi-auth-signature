@@ -5,8 +5,8 @@
   "author": "Anthony Bouch <tony@58bits.com> (http://www.58bits.com)",
   "repository":
     {
-      "type": "git",
-      "url": "git://github.com/58bits/hapi-auth-signature"
+      "type": "git"
+	  ,"url": "git://github.com/58bits/hapi-auth-signature"
     },
   "main": "index",
   "keywords": [
